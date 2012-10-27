@@ -12,7 +12,7 @@ default["keystone"]["db"]["name"] = "keystone"
 default["keystone"]["db"]["username"] = "keystone"
 # Replacing with OpenSSL::Password in recipes/server.rb
 # default["keystone"]["db"]["password"] = "keystone"
-
+default["keystone"]["release"] = "folsom"
 default["keystone"]["verbose"] = "False"
 default["keystone"]["debug"] = "False"
 

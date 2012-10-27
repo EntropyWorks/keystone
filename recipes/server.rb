@@ -83,11 +83,12 @@ execute "keystone-manage db_sync" do
   action :nothing
 end
 
+ks_release = node["keystone"]["release"]
 ks_admin_endpoint = get_bind_endpoint("keystone", "admin-api")
 ks_service_endpoint = get_bind_endpoint("keystone", "service-api")
 
 template "/etc/keystone/keystone.conf" do
-  source "keystone.conf.erb"
+  source "#{ks_release}/keystone.conf.erb"
   owner "root"
   group "root"
   mode "0644"
